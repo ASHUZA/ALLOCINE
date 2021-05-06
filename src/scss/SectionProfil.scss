@@ -1,0 +1,85 @@
+.sectionprofil{
+    
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.SectionVideo{
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+.cardprofil{
+    //height: 420px;
+    border-radius: 30px;
+    padding-top: 20px;
+    padding-left: 20px;
+    
+    background-color: rgb(255, 255, 255);
+
+}
+
+.cardvideo{
+    height: 450px;
+ padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+
+    //background-color: rgb(224, 62, 62);
+}   
+.videogb {
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    background-color: rgb(12, 15, 27);
+   
+}
+
+.videoplay{
+    background-color: #fff;
+    height: 320px;
+
+}
+
+.blockprofil{
+
+
+}
+
+.imgfilm{
+    height: 300px ;
+    width: 300px;
+    border-radius: 10px;
+}
+
+.cardimg{
+
+    height: 300px ;
+    width: 300px;
+
+  }
+
+h2{
+
+    font-size: 16px;
+    font-family: 'Montserrat';
+    text-transform: uppercase;
+    text-align: left;
+    font-weight: 500;
+   text-transform: uppercase;
+}
+
+h2 span{
+
+    font-size: 20px;
+
+}

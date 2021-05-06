@@ -1,0 +1,38 @@
+.mask {
+    
+    // background: linear-gradient( 45deg, rgba(29, 236, 197, 0.7), rgba(91, 14, 214, 0.7) 100%)
+}
+
+
+// src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4"
+.covercontainer{
+   //  height: 250px;
+    align-self: flex-end;
+    justify-content: center;
+    // background-image: linear-gradient(to top, rgba(255,0,0,0), rgb(253, 243, 243));
+    // opacity: 0.5;
+    opacity: 0.5;
+    background: rgb(2,0,36);
+    background: linear-gradient(0deg, rgba(2,0,36,1) 20%, rgb(4, 3, 26) 62%, rgba(21, 21, 22, 0.8) 100%);
+  margin-bottom: 5px;
+
+    
+   
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 35px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 800;
+    line-height: 85.404px;
+    vertical-align: baseline;
+    text-decoration: none solid rgb(255, 255, 255);
+}
+
+h5{
+    font-size: 16px;
+    
+}
