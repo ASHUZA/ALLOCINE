@@ -63,6 +63,7 @@ function SectionCarousel() {
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       </div>
     </div>
+    
 
 
     <div className="carousel-item">
