@@ -1,8 +1,8 @@
 import './scss/SectionProfil.scss';
 
 
-function SectionProfil() {
 
+const SectionProfil = (props) => {
     return (
 
         <>
@@ -15,7 +15,7 @@ function SectionProfil() {
 
                         <div className="row">
                             <div className="col-4 col-sm-4 col-sd-4 col-lg-4 col-xl-4cardimg">
-                                <p><img className=" img-fluid" src="https://lumiere-a.akamaihd.net/v1/images/logan_584x800_9a5af33a.jpeg" alt="card image" /></p>
+                                <p><img className=" img-fluid"  src={`https://image.tmdb.org/t/p/original${props.src}`} alt="card image" /></p>
                             </div>
 
                             <div className="col-4 col-sm-4 col-sd-4 col-lg-4 cardinfo">

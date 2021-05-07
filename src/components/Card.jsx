@@ -2,12 +2,22 @@ import '../scss/Card.scss';
 
 
 const Card = (props) => {
+
+
+    const  showprofil = (id)=>{
+        props.showprofilfromchild(id);
+    }
+
+
     return (
+
 
         <>
 
+
+
             <div>
-                <div className="image-flip hover-shadow" >
+                <div className="image-flip hover-shadow" onClick={()=>showprofil(props.my_id)}>
                     <div className="mainflip flip-0">
                         <div className="frontside">
                             <div className="card">
@@ -21,7 +31,7 @@ const Card = (props) => {
                             <div className="card">
                                 <div className="card-body text-center mt-4">
                                     <h4 className="card-title">{props.titre}</h4>
-                                    <p className="card-text card_resume"> {props.resume} </p>
+                                    <p className="card-text card_resume"> {props.resume}{props.my_id} </p>
                                    
                                 </div>
                             </div>

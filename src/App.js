@@ -16,7 +16,11 @@ import axios from 'axios';
 
 function App() {
 
-  const movie_id = "775996"
+
+  const getidmovies = (e) => {
+    setMyId(e)
+
+  }
 
   const My_apikey = "2e352e05a7d8b0a12370c4ba41e55909";
 
@@ -39,6 +43,7 @@ function App() {
     return {
       matricule: movie.id,
       image_profil: movie.backdrop_path,
+
       titre: movie.title,
 
       image_principal: movie.poster_path,
@@ -82,17 +87,18 @@ function App() {
   //insertion profil
 
   const [dataProfil, setdataProfil] = useState([])
+  const [my_id, setMyId] = useState("")
   useEffect(() => {
     const recuperationdataProfil = async () => {
       //     const resultatMovies = await axios("https://api.themoviedb.org/3/movie/popular?api_key=${My_apikey}&language=en-US&page=1")
-      const resultatProfil = await axios(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=${My_apikey}&language=en-US`)
+      const resultatProfil = await axios(`https://api.themoviedb.org/3/movie/${my_id}?api_key=${My_apikey}&language=en-US`)
 
       setdataProfil(resultatProfil.data);
 
       // console.log(resultatProfil.data.original_title)
     }
     recuperationdataProfil()
-  }, [])
+  }, [my_id])
 
 
 
@@ -104,34 +110,12 @@ function App() {
   const [dataTrailer, setdataTrailer] = useState([])
   useEffect(() => {
     const recuperationdataTrailer = async () => {
-      //     const resultatMovies = await axios("https://api.themoviedb.org/3/movie/popular?api_key=${My_apikey}&language=en-US&page=1")
-      const resultatTrailer = await axios(`https://api.themoviedb.org/3/movie/775996/videos?api_key=2e352e05a7d8b0a12370c4ba41e55909&language=en-US`)
+      const resultatTrailer = await axios(`https://api.themoviedb.org/3/movie/${my_id}/videos?api_key=${My_apikey}&language=en-US`)
 
       setdataTrailer(resultatTrailer.data.results);
-
-      // console.log(resultatProfil.data.original_title)
     }
     recuperationdataTrailer()
-  }, [])
-
-
-//  https://api.themoviedb.org/3/movie/${movie_id}/videos?api_key=%24%7BMy_apikey%7D&language=en-US
-
-
-
-
-  // let Profil = dataProfil.map(Profil => {
-  //   return {
-  //     matriculeProfil: Profil.id,
-  //     image_profilProfil: Profil.backdrop_path,
-  //     titreProfil: Profil.name,
-  //     image_principalProfil: Profil.poster_path,
-  //     resumeProfil : Profil.overview
-
-  //   };
-
-  // })
-  // console.log(Tvs)
+  }, [my_id])
 
 
 
@@ -139,18 +123,52 @@ function App() {
 
 
     <>
-{
-  console.log(dataTrailer)}
+      {
+        console.log(my_id)}
 
 
-    <Header />
+      <Header />
       <Cover
-      src= {dataProfil.backdrop_path}
-      titre= {dataProfil.original_title}
-      release_date ={dataProfil.release_date}
+        src={dataProfil.backdrop_path}
+        titre={dataProfil.original_title}
+        release_date={dataProfil.release_date}
       />
-      <SectionProfil />
-      <SectionVideo />
+
+
+      <SectionProfil
+        src={dataProfil.poster_path}
+
+      />
+
+
+
+
+
+      <div className="container-fluid videogb">
+        <div className="container">
+          <div className="row SectionVideo">
+
+
+            {dataTrailer.map(function (element) {
+              return (
+
+
+                <SectionVideo
+                  src1={element.key}
+                />
+
+              );
+            })}
+
+
+
+
+
+          </div>
+
+        </div>
+      </div>
+
 
 
 
@@ -169,8 +187,8 @@ function App() {
               {films.map(function (element) {
                 return (
                   <Card
-
-                  
+                    showprofilfromchild={getidmovies}
+                    my_id={element.matricule}
                     titre={element.titre}
                     resume={element.resume}
                     src={`https://image.tmdb.org/t/p/original${element.image_principal}`}
@@ -225,6 +243,9 @@ function App() {
               {Tvs.map(function (element) {
                 return (
                   <Card
+
+                    showprofilfromchild={getidmovies}
+                    my_id={element.matriculeTv}
                     titre={element.titreTv}
                     resume={element.resumeTv}
                     src={`https://image.tmdb.org/t/p/original${element.image_principalTv}`}
