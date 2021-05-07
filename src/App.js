@@ -15,6 +15,10 @@ import axios from 'axios';
 
 
 function App() {
+
+
+  //INSERTION DES FILMS 
+
   const [dataMovies, setdataMovies] = useState([])
   useEffect(() => {
     const recuperationdata = async () => {
@@ -42,6 +46,9 @@ function App() {
   })
   console.log(films)
 
+
+  // INSERTION DES SERIES
+
   const [dataTv, setdataTv] = useState([])
   useEffect(() => {
     const recuperationdataTv = async () => {
@@ -68,6 +75,37 @@ function App() {
 
   })
   console.log(Tvs)
+
+
+//insertion profil
+
+  const [dataTv, setdataTv] = useState([])
+  useEffect(() => {
+    const recuperationdataTv = async () => {
+ //     const resultatMovies = await axios("https://api.themoviedb.org/3/movie/popular?api_key=2e352e05a7d8b0a12370c4ba41e55909&language=en-US&page=1")
+      const resultatTv = await axios("https://api.themoviedb.org/3/tv/popular?api_key=2e352e05a7d8b0a12370c4ba41e55909&language=en-US&page=1")
+
+
+      setdataTv(resultatTv.data.results);
+    }
+    recuperationdataTv()
+  }, [])
+
+
+
+  let Tvs = dataTv.map(Tv => {
+    return {
+      matriculeTv: Tv.id,
+      image_profilTv: Tv.backdrop_path,
+      titreTv: Tv.name,
+      image_principalTv: Tv.poster_path,
+      resumeTv : Tv.overview
+
+    };
+
+  })
+  console.log(Tvs)
+
 
 
   return (
