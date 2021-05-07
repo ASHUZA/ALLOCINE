@@ -16,6 +16,7 @@ import axios from 'axios';
 
 function App() {
 
+  const movie_id = "775996"
 
   const My_apikey = "2e352e05a7d8b0a12370c4ba41e55909";
 
@@ -84,7 +85,7 @@ function App() {
   useEffect(() => {
     const recuperationdataProfil = async () => {
       //     const resultatMovies = await axios("https://api.themoviedb.org/3/movie/popular?api_key=${My_apikey}&language=en-US&page=1")
-      const resultatProfil = await axios(`https://api.themoviedb.org/3/movie/793723?api_key=${My_apikey}&language=en-US`)
+      const resultatProfil = await axios(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=${My_apikey}&language=en-US`)
 
       setdataProfil(resultatProfil.data);
 
@@ -92,6 +93,29 @@ function App() {
     }
     recuperationdataProfil()
   }, [])
+
+
+
+
+
+  //INSERTION TRALER
+
+
+  const [dataTrailer, setdataTrailer] = useState([])
+  useEffect(() => {
+    const recuperationdataTrailer = async () => {
+      //     const resultatMovies = await axios("https://api.themoviedb.org/3/movie/popular?api_key=${My_apikey}&language=en-US&page=1")
+      const resultatTrailer = await axios(`https://api.themoviedb.org/3/movie/775996/videos?api_key=2e352e05a7d8b0a12370c4ba41e55909&language=en-US`)
+
+      setdataTrailer(resultatTrailer.data.results);
+
+      // console.log(resultatProfil.data.original_title)
+    }
+    recuperationdataTrailer()
+  }, [])
+
+
+//  https://api.themoviedb.org/3/movie/${movie_id}/videos?api_key=%24%7BMy_apikey%7D&language=en-US
 
 
 
@@ -115,6 +139,10 @@ function App() {
 
 
     <>
+{
+  console.log(dataTrailer)}
+
+
     <Header />
       <Cover
       src= {dataProfil.backdrop_path}
