@@ -29,7 +29,7 @@ function App() {
   const [dataMovies, setdataMovies] = useState([])
   useEffect(() => {
     const recuperationdata = async () => {
-      const resultatMovies = await axios(`https://api.themoviedb.org/3/movie/popular?api_key=${My_apikey}&language=en-US&page=1`)
+      const resultatMovies = await axios(`https://api.themoviedb.org/3/movie/popular?api_key=${My_apikey}&language=en-US&page=2`)
 
 
       setdataMovies(resultatMovies.data.results);
