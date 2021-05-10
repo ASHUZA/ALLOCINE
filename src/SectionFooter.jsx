@@ -1,119 +1,134 @@
 
 import './scss/SectionFooter.scss';
+import './boxicons/css/boxicons.min.css';
 
 
 function SectionFooter() {
 
-    return (
+  return (
 
-        <>
-
-
-
-<footer className="footerbg text-start text-white">
-
-  
- 
- <div className="container p-4 pb-0">
-
-   <section className="">
-     <form action="">
-
-       <div className="row d-flex justify-content-center">
-
-
-         <div className="col-md-5 col-12">
-         <form className="d-flex input-group w-auto">
-                            <input
-                                type="search"
-                                className="form-control"
-                                placeholder="Search movies"
-                                aria-label="Search"
-                            />
-              
-                        </form>
-         </div>
+    <>
 
 
 
-         <div className="col-auto">
+      <footer className="footerbg text-start text-white" id="footer">
+        <div className="footer-top">
 
-           <button type="submit" className="btn btn-outline-light mb-4">
-           search
+
+          {/* 
+        <div className="container p-4 pb-0">
+
+          <section className="">
+            <form action="">
+
+              <div className="row d-flex justify-content-center">
+
+
+                <div className="col-md-5 col-12">
+                  <form className="d-flex input-group w-auto">
+                    <input
+                      type="search"
+                      className="form-control"
+                      placeholder="Search movies"
+                      aria-label="Search"
+                    />
+
+                  </form>
+                </div>
+
+
+
+                <div className="col-auto">
+
+                  <button type="submit" className="btn btn-outline-light mb-4">
+                    search
            </button>
-         </div>
+                </div>
 
-       </div>
+              </div>
 
-     </form>
-   </section>
+            </form>
+          </section>
 
- </div>
-
- <div className="container p-4">
-
-<div className="row">
-
-  <div className="col-lg-6 col-md-12 d-flex flex-column justify-content-start mb-4 mb-md-0">
-    <h5 className="text-uppercase">Footer Content</h5>
-
-    <p>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
-      molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae
-      aliquam voluptatem veniam, est atque cumque eum delectus sint!
-    </p>
-  </div>
+        </div> */}
 
 
-  <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
-    <h5 className="text-uppercase">Categorie</h5>
-
-    <ul className="list-unstyled mb-0">
-      <li>
-        <a href="#!" className="text-white">Action</a>
-      </li>
-      <li>
-        <a href="#!" className="text-white">Fiction</a>
-      </li>
-      <li>
-        <a href="#!" className="text-white">Drame</a>
-      </li>
-      <li>
-        <a href="#!" className="text-white">Comedie</a>
-      </li>
-    </ul>
-  </div>
+          <div className="container p-4">
 
 
-  <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
-    <h5 className="text-uppercase mb-0"></h5>
-    <br/>
-
-    <ul className="list-unstyled">
-      <li>
-        <a href="#!" className="text-white">A propos</a>
-      </li>
-      <li>
-        <a href="#!" className="text-white">Accueil</a>
-      </li>
-      <li>
-        <a href="#!" className="text-white">Contact</a>
-      </li>
-    
-    </ul>
-  </div>
-</div>
-</div>
 
 
-  <div className="text-center p-3" style={{backgroundColor: "rgba(0, 0, 0, 0.2)"}}>
-    © 2021 Copyright:
+            <div className="container">
+              <div className="row">
+
+                <div className="col-lg-4 col-md-6">
+                  <div className="footer-info">
+                    <h3>ASH CINE</h3>
+                    <p>
+                      47 Budjala Kintamno<br />
+        KINSHASA, RDC<br /><br />
+                      <strong>Phone:</strong> +243 97 6347207<br />
+                      <strong>Email:</strong> ashuzakasumbepascal19@gmail.com<br />
+                    </p>
+                    <div className="social-links mt-3">
+                      <a href="#" className="twitter"><i className="bx bxl-twitter"></i></a>
+                      <a href="#" className="facebook"><i className="bx bxl-facebook"></i></a>
+                      <a href="#" className="instagram"><i className="bx bxl-instagram"></i></a>
+                      <a href="#" className="google-plus"><i className="bx bxl-skype"></i></a>
+                      <a href="#" className="linkedin"><i className="bx bxl-linkedin"></i></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="col-lg-2 col-md-6 footer-links">
+                  <h4>Useful Links</h4>
+                  <ul>
+                    <li><i className="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                    <li><i className="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+                    <li><i className="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+                    <li><i className="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+                    <li><i className="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                  </ul>
+                </div>
+
+                <div className="col-lg-2 col-md-6 footer-links">
+                  <h4>Our Services</h4>
+                  <ul>
+                    <li><i className="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+                    <li><i className="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+
+                    <li><i className="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+                    <li><i className="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+                    <li><i className="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                    <li><i className="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+                  </ul>
+                </div>
+
+                <div className="col-lg-4 col-md-6 footer-newsletter">
+                  <h4>Our Newsletter</h4>
+                  <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+                  <form action="" method="post">
+                    <input type="email" name="email" /><input type="submit" value="Subscribe" />
+                  </form>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+          <div className="text-center p-1" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
+            © 2021 Copyright:
     <a className="text-white" href="https://mdbootstrap.com/">kinshasadigital.com</a>
-  </div>
-  
-</footer>
-        </>
+          </div>
+        </div>
+      </footer>
+    </>
 
-    );
+  );
 }
 export default SectionFooter;

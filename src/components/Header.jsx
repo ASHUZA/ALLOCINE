@@ -8,7 +8,6 @@ function Header() {
 
                 <div className="container-fluid">
 
-                    <a className="navbar-brand" href="#">FILAMU</a>
 
 
                     <button

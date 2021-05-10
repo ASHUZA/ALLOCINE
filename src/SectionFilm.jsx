@@ -174,6 +174,42 @@ function SectionFilm() {
 
       <div className="containe d-flex align-items-center blockserie  flex-column">
 
+        <div className="container blockgenres">
+
+
+          <button
+            type="button"
+            className="btn btn-rounded btngenre"
+            data-mdb-ripple-color="dark"
+          >
+            Action
+</button>
+<button
+            type="button"
+            className="btn btn-rounded btngenre"
+            data-mdb-ripple-color="dark"
+          >
+            Action
+</button>
+
+<button
+            type="button"
+            className="btn btn-rounded btngenre"
+            data-mdb-ripple-color="dark"
+          >
+            Action
+</button>
+
+<button
+            type="button"
+            className="btn btn-rounded btngenre"
+            data-mdb-ripple-color="dark"
+          >
+            Action
+</button>
+          
+
+        </div>
         <div className="container bockcard">
           <div className="section-title" data-aos="fade-up">
             <h2> FILMS</h2>
