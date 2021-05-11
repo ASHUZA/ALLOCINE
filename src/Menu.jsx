@@ -3,6 +3,10 @@ import { Link, NavLink } from "react-router-dom";
 
 const Menu = (props) => {
 
+
+
+  
+
     return (
         <>
 
@@ -19,6 +23,7 @@ const Menu = (props) => {
                         <ul>
                             <li><NavLink exact to="/" className="a">Home</NavLink></li>
                             <li><NavLink to="SectionFilm" className="a">Films</NavLink></li>
+                          
                             <li><NavLink to="SectionSerie">Series</NavLink></li>
                             <li><NavLink to="services">Acteurs</NavLink></li>
                             <li><NavLink to="portfolio">Portfolio</NavLink></li>

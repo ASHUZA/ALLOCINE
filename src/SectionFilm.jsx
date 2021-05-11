@@ -12,6 +12,7 @@ import SectionCarousel from './SectionCarousel';
 import SectionVideo from './SectionVideo';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import BtnGenres from './components/BtnGenres';
 
 
 function SectionFilm() {
@@ -20,6 +21,13 @@ function SectionFilm() {
   const getidmovies = (e) => {
     setMyId(e)
 
+  };
+
+
+  const geturlgenre = (My_genre_id) => {
+
+    //alert(My_genre_id)
+    urlmovies ? seturlmovies(`https://api.themoviedb.org/3/discover/movie?api_key=${My_apikey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${My_genre_id}&with_watch_monetization_types=flatrate`) : urlmovies(`https://api.themoviedb.org/3/movie/popular?api_key=${My_apikey}&language=en-US&page=4`)
   }
 
   const My_apikey = "2e352e05a7d8b0a12370c4ba41e55909";
@@ -27,15 +35,16 @@ function SectionFilm() {
   //INSERTION DES FILMS 
 
   const [dataMovies, setdataMovies] = useState([])
+  const [urlmovies, seturlmovies] = useState(`https://api.themoviedb.org/3/movie/popular?api_key=${My_apikey}&language=en-US&page=2`)
   useEffect(() => {
     const recuperationdata = async () => {
-      const resultatMovies = await axios(`https://api.themoviedb.org/3/movie/popular?api_key=${My_apikey}&language=en-US&page=2`)
+      const resultatMovies = await axios(urlmovies)
 
 
       setdataMovies(resultatMovies.data.results);
     }
     recuperationdata()
-  }, [])
+  }, [urlmovies])
 
 
 
@@ -52,6 +61,10 @@ function SectionFilm() {
     };
 
   })
+
+
+
+
 
 
   // INSERTION DES SERIES
@@ -119,19 +132,41 @@ function SectionFilm() {
 
 
 
+  //INSERTION MOVIES GENRE
+
+  const [dataGenre, setdataGenre] = useState([])
+  useEffect(() => {
+    const recuperationdataGenre = async () => {
+      const resultatGenre = await axios(`https://api.themoviedb.org/3/genre/movie/list?api_key=${My_apikey}&language=en-US`)
+
+
+      setdataGenre(resultatGenre.data.genres);
+    }
+    recuperationdataGenre()
+  }, [])
+
+
+
   return (
 
 
     <>
+
+
       {
         console.log(my_id)}
+
+      {console.log(dataGenre)}
 
 
       <Cover
         src={dataProfil.backdrop_path}
         titre={dataProfil.original_title}
         release_date={dataProfil.release_date}
+
+      //   onload={showtoprated()}
       />
+
 
 
       <SectionProfil
@@ -177,37 +212,21 @@ function SectionFilm() {
         <div className="container blockgenres">
 
 
-          <button
-            type="button"
-            className="btn btn-rounded btngenre"
-            data-mdb-ripple-color="dark"
-          >
-            Action
-</button>
-<button
-            type="button"
-            className="btn btn-rounded btngenre"
-            data-mdb-ripple-color="dark"
-          >
-            Action
-</button>
 
-<button
-            type="button"
-            className="btn btn-rounded btngenre"
-            data-mdb-ripple-color="dark"
-          >
-            Action
-</button>
 
-<button
-            type="button"
-            className="btn btn-rounded btngenre"
-            data-mdb-ripple-color="dark"
-          >
-            Action
-</button>
-          
+          {dataGenre.map(function (element) {
+            return (
+
+              <BtnGenres
+
+                showgenresfromchild={geturlgenre}
+                genre_id={element.id}
+                genre_name={element.name}
+
+              />
+            );
+          })}
+
 
         </div>
         <div className="container bockcard">
@@ -262,59 +281,6 @@ function SectionFilm() {
 
 
       <SectionCarousel />
-
-
-      <div className="containe d-flex align-items-center blockserie  flex-column">
-
-        <div className="container bockcard">
-          <div className="section-title" data-aos="fade-up">
-            <h2> SERIES</h2>
-            <p> SERIES populaire </p>
-          </div>
-          <div className="row SectionMovies">
-            <div className="col-4 col-sm-4 col-sd-12 col-lg-12 col-xl-12 mb-5 d-flex justify-content-evenly flex-wrap cardMovies">
-
-
-              {Tvs.map(function (element) {
-                return (
-                  <Card
-
-                    showprofilfromchild={getidmovies}
-                    my_id={element.matriculeTv}
-                    titre={element.titreTv}
-                    resume={element.resumeTv}
-                    src={`https://image.tmdb.org/t/p/original${element.image_principalTv}`}
-                  />
-                );
-              })}
-
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <div className="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-          <div className="btn-group me-2" role="group" aria-label="First group">
-            <button type="button" className="btn btn-primary">1</button>
-            <button type="button" className="btn btn-primary">2</button>
-            <button type="button" className="btn btn-primary">3</button>
-            <button type="button" className="btn btn-primary">4</button>
-          </div>
-          <div className="btn-group me-2" role="group" aria-label="Second group">
-            <button type="button" className="btn btn-primary">5</button>
-            <button type="button" className="btn btn-primary">6</button>
-            <button type="button" className="btn btn-primary">7</button>
-          </div>
-          <div className="btn-group" role="group" aria-label="Third group">
-            <button type="button" className="btn btn-primary">8</button>
-          </div>
-        </div>
-
-
-      </div>
 
 
       <SectionFooter />
