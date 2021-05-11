@@ -4,8 +4,11 @@ import { Link, NavLink } from "react-router-dom";
 const Menu = (props) => {
 
 
+    const  showprofil = (id)=>{
+        props.showprofilfromchild(id);
+    }
 
-  
+    // onClick={()=>showprofil("793723")}
 
     return (
         <>
@@ -22,10 +25,10 @@ const Menu = (props) => {
                     <nav className="nav-menu d-none d-lg-block">
                         <ul>
                             <li><NavLink exact to="/" className="a">Home</NavLink></li>
-                            <li><NavLink to="SectionFilm" className="a">Films</NavLink></li>
+                            <li><NavLink to="SectionFilm" >Films</NavLink></li>
                           
                             <li><NavLink to="SectionSerie">Series</NavLink></li>
-                            <li><NavLink to="services">Acteurs</NavLink></li>
+                            <li><NavLink to="SectionActeur">Acteurs</NavLink></li>
                             <li><NavLink to="portfolio">Portfolio</NavLink></li>
                             <li><NavLink to="contact">Contact</NavLink></li>
 {/* 

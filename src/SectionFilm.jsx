@@ -13,12 +13,16 @@ import SectionVideo from './SectionVideo';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import BtnGenres from './components/BtnGenres';
+import Menu from './Menu';
 
 
 function SectionFilm() {
 
 
   const getidmovies = (e) => {
+   
+    
+
     setMyId(e)
 
   };
@@ -94,9 +98,6 @@ function SectionFilm() {
     };
 
   })
-
-
-
   //insertion profil
 
   const [dataProfil, setdataProfil] = useState([])
@@ -153,6 +154,8 @@ function SectionFilm() {
     <>
 
 
+
+
       {
         console.log(my_id)}
 
@@ -173,9 +176,7 @@ function SectionFilm() {
         src={dataProfil.poster_path}
 
       />
-
-
-
+             
 
 
       <div className="container-fluid videogb">
