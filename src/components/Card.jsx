@@ -29,7 +29,7 @@ const Card = (props) => {
                         </div>
                         <div className="backside">
                             <div className="card">
-                                <div className="card-body text-center mt-4">
+                                <div className="card-body text-center mt-4 card_resume_block">
                                     <h4 className="card-title">{props.titre}</h4>
                                     <p className="card-text card_resume"> {props.resume}{props.my_id} </p>
                                    

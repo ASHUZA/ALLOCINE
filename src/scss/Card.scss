@@ -107,8 +107,6 @@
 }
 
 .frontside .card .card-body img {
-    // width: 250px;
-    // height: 300px;
 
 height: 280px;
 width: 90%;
@@ -117,7 +115,10 @@ width: 90%;
 }
 
 .card_resume{
-    font-size: 12px;
+    font-size: 11px;
+    
+}
 
-
+.card_resume_block{
+    overflow: hidden ;   
 }

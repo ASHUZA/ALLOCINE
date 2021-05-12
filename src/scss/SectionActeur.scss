@@ -1,19 +1,19 @@
-
-/*--------------------------------------------------------------
-# Courses
---------------------------------------------------------------*/
 .courses .course-item {
     border-radius: 5px;
+  margin-bottom: 10px;
     border: 1px solid #eef0ef;
+    margin-top: 5px;
   }
+
+
   
   .courses .course-content {
-    padding: 15px;
+    padding: 5px;
   }
   
   .courses .course-content h3 {
     font-weight: 700;
-    font-size: 20px;
+    font-size: 16px;
   }
   
   .courses .course-content h3 a {
@@ -22,7 +22,7 @@
   }
   
   .courses .course-content h3 a:hover {
-    color: #5fcf80;
+    color:  #ed5b5b;
   }
   
   .courses .course-content p {
@@ -31,22 +31,17 @@
   }
   
   .courses .course-content h4 {
-    font-size: 14px;
-    background: #5fcf80;
-    padding: 7px 14px;
+    font-size: 12px;
+    background: #cc1616;
+    padding: 7px 10px;
     color: #fff;
     margin: 0;
   }
   
-  .courses .course-content .price {
-    margin: 0;
-    font-weight: 700;
-    font-size: 18px;
-    color: #37423b;
-  }
+  
   
   .courses .trainer {
-    padding-top: 15px;
+    padding-top: 2px;
     border-top: 1px solid #eef0ef;
   }
   
@@ -55,14 +50,13 @@
     border-radius: 50px;
   }
   
-  .courses .trainer .trainer-profile span {
-    padding-left: 10px;
-    font-weight: 600;
-    font-size: 16px;
-    color: #5a6c60;
-  }
-  
   .courses .trainer .trainer-rank {
-    font-size: 18px;
+    font-size: 14px;
     color: #657a6d;
   }
+
+
+
+
+
+  

@@ -39,7 +39,7 @@ function SectionFilm() {
   //INSERTION DES FILMS 
 
   const [dataMovies, setdataMovies] = useState([])
-  const [urlmovies, seturlmovies] = useState(`https://api.themoviedb.org/3/movie/popular?api_key=${My_apikey}&language=en-US&page=2`)
+  const [urlmovies, seturlmovies] = useState(`https://api.themoviedb.org/3/movie/popular?api_key=${My_apikey}&language=fr-FR&page=2`)
   useEffect(() => {
     const recuperationdata = async () => {
       const resultatMovies = await axios(urlmovies)
@@ -174,6 +174,10 @@ function SectionFilm() {
 
       <SectionProfil
         src={dataProfil.poster_path}
+        titre={dataProfil.original_title}
+        overview= {dataProfil.overview}
+
+        release_date= {dataProfil.release_date}
 
       />
              
@@ -182,7 +186,6 @@ function SectionFilm() {
       <div className="container-fluid videogb">
         <div className="container">
           <div className="row SectionVideo">
-
 
             {dataTrailer.map(function (element) {
               return (
@@ -194,10 +197,6 @@ function SectionFilm() {
 
               );
             })}
-
-
-
-
 
           </div>
 
