@@ -6,7 +6,6 @@ function SectionCarousel() {
 
 <div className="container-fluid mb-5 carouselbg">
 
-<div className="container p-5">
 <div
   id="carouselBasicExample"
   className="carousel slide carousel-fade"
@@ -45,10 +44,6 @@ function SectionCarousel() {
         className="d-block w-100"
         alt="..."
       />
-      <div className="carousel-caption d-none d-md-block">
-        <h5>First slide label</h5>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-      </div>
     </div>
 
 
@@ -58,10 +53,7 @@ function SectionCarousel() {
         className="d-block w-100"
         alt="..."
       />
-      <div className="carousel-caption d-none d-md-block">
-        <h5>Second slide label</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
+     
     </div>
     
 
@@ -72,10 +64,7 @@ function SectionCarousel() {
         className="d-block w-100"
         alt="..."
       />
-      <div className="carousel-caption d-none d-md-block">
-        <h5>Third slide label</h5>
-        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-      </div>
+     
     </div>
   </div>
   
@@ -99,7 +88,6 @@ function SectionCarousel() {
     <span className="carousel-control-next-icon" aria-hidden="true"></span>
     <span className="visually-hidden">Next</span>
   </button>
-</div>
 </div>
 </div>
         </>

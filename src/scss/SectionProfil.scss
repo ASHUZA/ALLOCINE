@@ -1,11 +1,10 @@
 .sectionprofil{
     
+
     margin-top: 50px;
     margin-bottom: 50px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+   //background-color: rgb(110, 220, 66);
+    
 
 }
 .SectionVideo{
@@ -17,14 +16,21 @@
 
 }
 
+.profil_block{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
 
 .cardprofil{
     //height: 420px;
     border-radius: 30px;
-    padding-top: 20px;
+    padding-top: 10px;
     padding-left: 20px;
     
-    background-color: rgb(255, 255, 255);
+  //  background-color: rgb(255, 255, 255);
 
 }
 
@@ -45,8 +51,8 @@
 }
 
 .videoplay{
-    background-color: #fff;
-    height: 320px;
+    // background-color: #fff;
+    // height: 320px;
 
 }
 
@@ -55,17 +61,25 @@
 
 }
 
+.cardinfo{
+
+    padding: 20px;
+    border-radius: 20px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(12, 15, 27);
+    }
+
 .imgfilm{
-    height: 300px ;
-    width: 300px;
-    border-radius: 10px;
+    height: 350px ;
+    width: 1200px;
+    padding-bottom: 10px;
+    border-radius: 20px;
 }
 
 .cardimg{
 
-    height: 300px ;
-    width: 300px;
-
+    height: 360px ;
+//background-color: rgb(214, 29, 29);
   }
 
 h2{

@@ -14,6 +14,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import BtnGenres from './components/BtnGenres';
 import Menu from './Menu';
+import './scss/btn.scss';
 import CardCasting from './components/CardCasting';
 
 
@@ -190,7 +191,7 @@ function SectionFilm() {
 
 
       <SectionProfil
-        src={dataProfil.poster_path}
+        src={dataProfil.backdrop_path}
         titre={dataProfil.original_title}
         overview={dataProfil.overview}
 
@@ -204,7 +205,7 @@ function SectionFilm() {
 
 
 
-<div className="container-fluid videogb">
+      <div className="container-fluid videogb">
         <div className="container">
           <div className="row SectionVideo">
 
@@ -225,34 +226,34 @@ function SectionFilm() {
       </div>
 
 
-<div className="container section_cast">
-            
-      <div className="col-12 col-sm-12 col-sd-12 col-lg-12">
+      <div className="container section_cast">
 
-        <div className="row casting_profil">
-          <div>
-            <h2>CAST</h2>
-          </div>
-          <div className="col-12 col-sm-12 col-sd-12 col-lg-12 col-xl-12 mb-2 d-flex Cardcastingscroller">
-         
-            {dataCast.map(function (element) {
-              return (       
-                <CardCasting
-                
-                name={element.name}
-                resume={element.resume}
+        <div className="col-12 col-sm-12 col-sd-12 col-lg-12">
 
-                homepage={element.homepage}
-                src={`https://image.tmdb.org/t/p/original${element.profile_path}`}
-             
-                />
+          <div className="row casting_profil">
+            <div>
+              <h2>CAST</h2>
+            </div>
+            <div className="col-12 col-sm-12 col-sd-12 col-lg-12 col-xl-12 mb-2 d-flex Cardcastingscroller">
 
-              );
-            })}
+              {dataCast.map(function (element) {
+                return (
+                  <CardCasting
 
+                    name={element.name}
+                    resume={element.resume}
+
+                    homepage={element.homepage}
+                    src={element.profile_path}
+
+                  />
+
+                );
+              })}
+
+            </div>
           </div>
         </div>
-      </div>
 
       </div>
 
@@ -310,18 +311,21 @@ function SectionFilm() {
 
         <div className="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
           <div className="btn-group me-2" role="group" aria-label="First group">
-            <button type="button" className="btn btn-primary">1</button>
-            <button type="button" className="btn btn-primary">2</button>
-            <button type="button" className="btn btn-primary">3</button>
-            <button type="button" className="btn btn-primary">4</button>
+            <button class="favorite styled" type="button">
+              Precedent
+</button>
           </div>
           <div className="btn-group me-2" role="group" aria-label="Second group">
-            <button type="button" className="btn btn-primary">5</button>
-            <button type="button" className="btn btn-primary">6</button>
-            <button type="button" className="btn btn-primary">7</button>
+
+            <button class="favorite styled" type="button">
+              1
+</button>
           </div>
           <div className="btn-group" role="group" aria-label="Third group">
-            <button type="button" className="btn btn-primary">8</button>
+            <button class="favorite styled" type="button">
+              Suivant
+</button>
+
           </div>
         </div>
 
@@ -329,8 +333,6 @@ function SectionFilm() {
       </div>
 
 
-
-      <SectionCarousel />
 
 
       <SectionFooter />
