@@ -202,7 +202,30 @@ function SectionFilm() {
       />
 
 
-<div className="container">
+
+
+<div className="container-fluid videogb">
+        <div className="container">
+          <div className="row SectionVideo">
+
+            {dataTrailer.map(function (element) {
+              return (
+
+
+                <SectionVideo
+                  src1={element.key}
+                />
+
+              );
+            })}
+
+          </div>
+
+        </div>
+      </div>
+
+
+<div className="container section_cast">
             
       <div className="col-12 col-sm-12 col-sd-12 col-lg-12">
 
@@ -210,7 +233,7 @@ function SectionFilm() {
           <div>
             <h2>CAST</h2>
           </div>
-          <div className="col-12 col-sm-12 col-sd-12 col-lg-12 col-xl-12 mb-2 d-flex justify-content-evenly flex-wrap Cardcastingscroller bg-aqua">
+          <div className="col-12 col-sm-12 col-sd-12 col-lg-12 col-xl-12 mb-2 d-flex Cardcastingscroller">
          
             {dataCast.map(function (element) {
               return (       
@@ -232,29 +255,6 @@ function SectionFilm() {
       </div>
 
       </div>
-
-
-
-      <div className="container-fluid videogb">
-        <div className="container">
-          <div className="row SectionVideo">
-
-            {dataTrailer.map(function (element) {
-              return (
-
-
-                <SectionVideo
-                  src1={element.key}
-                />
-
-              );
-            })}
-
-          </div>
-
-        </div>
-      </div>
-
 
 
 
