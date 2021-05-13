@@ -25,9 +25,8 @@ const SectionProfil = (props) => {
 
 
                                 <h2> <span>{props.titre}</span></h2>
-                                <div>                           <i className="bx bx-user"></i>&nbsp;50&nbsp;&nbsp;
-                                    <i className="bx bx-heart"></i>&nbsp;65
-                                    </div>
+                                <div>                           <i className="bx bx-user"></i>&nbsp;{props.vote_count}&nbsp;&nbsp;
+                                    <i className="bx bx-heart"></i>&nbsp;{props.popularity}  </div>
 
 
                                 <p>  {props.overview}</p>
@@ -77,38 +76,7 @@ const SectionProfil = (props) => {
 
                             </div>
 
-                            <div className="col-12 col-sm-12 col-sd-12 col-lg-12">
-
-
-
-                                <div className="row casting_profil">
-                                    <div>
-                                    <h2>CAST</h2>
-                                    </div>
-                                    <div className="col-12 col-sm-12 col-sd-12 col-lg-12 col-xl-12 mb-2 d-flex justify-content-evenly flex-wrap cardMovies bg-aqua">
-
-                                        <CardCasting></CardCasting>
-
-
-                                        <CardCasting></CardCasting>
-
-                                        <CardCasting></CardCasting>
-
-                                        <CardCasting></CardCasting>
-
-                                        <CardCasting></CardCasting>
-
-                                        <CardCasting></CardCasting>
-
-                                        <CardCasting></CardCasting>
-
-                                        <CardCasting></CardCasting>
-                                    </div>
-                                </div>
-
-
-
-                            </div>
+                          
                         </div>
 
                     </div>

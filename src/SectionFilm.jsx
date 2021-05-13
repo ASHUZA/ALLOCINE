@@ -14,14 +14,15 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import BtnGenres from './components/BtnGenres';
 import Menu from './Menu';
+import CardCasting from './components/CardCasting';
 
 
 function SectionFilm() {
 
 
   const getidmovies = (e) => {
-   
-    
+
+
 
     setMyId(e)
 
@@ -132,6 +133,22 @@ function SectionFilm() {
   }, [my_id])
 
 
+  //INSERTION ACTEURS (Cast)
+
+
+  const [dataCast, setdataCast] = useState([])
+  useEffect(() => {
+    const recuperationdataCast = async () => {
+      const resultatCast = await axios(`https://api.themoviedb.org/3/movie/${my_id}/credits?api_key=${My_apikey}&language=en-US`)
+
+
+
+      setdataCast(resultatCast.data.cast);
+    }
+    recuperationdataCast()
+  }, [my_id])
+
+
 
   //INSERTION MOVIES GENRE
 
@@ -175,12 +192,47 @@ function SectionFilm() {
       <SectionProfil
         src={dataProfil.poster_path}
         titre={dataProfil.original_title}
-        overview= {dataProfil.overview}
+        overview={dataProfil.overview}
 
-        release_date= {dataProfil.release_date}
+        release_date={dataProfil.release_date}
 
+        popularity={dataProfil.popularity}
+
+        vote_count={dataProfil.vote_count}
       />
+
+
+<div className="container">
+            
+      <div className="col-12 col-sm-12 col-sd-12 col-lg-12">
+
+        <div className="row casting_profil">
+          <div>
+            <h2>CAST</h2>
+          </div>
+          <div className="col-12 col-sm-12 col-sd-12 col-lg-12 col-xl-12 mb-2 d-flex justify-content-evenly flex-wrap Cardcastingscroller bg-aqua">
+         
+            {dataCast.map(function (element) {
+              return (       
+                <CardCasting
+                
+                name={element.name}
+                resume={element.resume}
+
+                homepage={element.homepage}
+                src={`https://image.tmdb.org/t/p/original${element.profile_path}`}
              
+                />
+
+              );
+            })}
+
+          </div>
+        </div>
+      </div>
+
+      </div>
+
 
 
       <div className="container-fluid videogb">
@@ -208,11 +260,7 @@ function SectionFilm() {
 
 
       <div className="containe d-flex align-items-center blockserie  flex-column">
-
         <div className="container blockgenres">
-
-
-
 
           {dataGenre.map(function (element) {
             return (
@@ -245,6 +293,8 @@ function SectionFilm() {
                     my_id={element.matricule}
                     titre={element.titre}
                     resume={element.resume}
+
+                    homepage={element.homepage}
                     src={`https://image.tmdb.org/t/p/original${element.image_principal}`}
                   />
                 );
