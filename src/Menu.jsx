@@ -30,7 +30,7 @@ const Menu = (props) => {
                             <li><NavLink to="SectionSerie">Series</NavLink></li>
                             <li><NavLink to="SectionActeur">Acteurs</NavLink></li>
                             <li><NavLink to="portfolio">Portfolio</NavLink></li>
-                            <li><NavLink to="contact">Contact</NavLink></li>
+                            <li><NavLink to="Contact">Contact</NavLink></li>
 {/* 
                             <form action="" method="post">
                                 <input type="search" name="search" /><input type="submit" value="Search" />

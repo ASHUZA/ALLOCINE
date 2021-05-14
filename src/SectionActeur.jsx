@@ -2,6 +2,8 @@ import './scss/SectionActeur.scss';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import CardPeople from './components/CardPeople'
+import Cover from './components/Cover'
+import SectionFooter from './SectionFooter';
 
 const SectionActeur = (props) => {
 
@@ -34,20 +36,13 @@ const SectionActeur = (props) => {
 
 
     <>
-
-
-
-
-
-
-
-
-
-
+<Cover
+src = "/3lTxcQqYvtzMpTAEgTbO5RkE4iz.jpg"
+/>
       <section id="popular-courses" className="courses">
         <div className="container" data-aos="fade-up">
 
-          <div className="section-title">
+          <div className="section-title acteurs_title">
             <h2>Acteurs</h2>
             <p>Acteurs populaires</p>
           </div>
@@ -78,7 +73,7 @@ const SectionActeur = (props) => {
       </section>
 
 
-
+<SectionFooter/>
     </>
 
   );

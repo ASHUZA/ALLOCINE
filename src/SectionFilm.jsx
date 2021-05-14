@@ -22,36 +22,40 @@ function SectionFilm() {
 
 
   const getidmovies = (e) => {
-
-
-
     setMyId(e)
-
   };
 
 
-  const geturlgenre = (My_genre_id) => {
 
+
+  const geturlgenre = (My_genre_id) => {
     //alert(My_genre_id)
-    urlmovies ? seturlmovies(`https://api.themoviedb.org/3/discover/movie?api_key=${My_apikey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${My_genre_id}&with_watch_monetization_types=flatrate`) : urlmovies(`https://api.themoviedb.org/3/movie/popular?api_key=${My_apikey}&language=en-US&page=4`)
+    urlmovies ? seturlmovies(`https://api.themoviedb.org/3/discover/movie?api_key=${My_apikey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${Pagenumber}&with_genres=${My_genre_id}&with_watch_monetization_types=flatrate`) : urlmovies(`https://api.themoviedb.org/3/movie/popular?api_key=${My_apikey}&language=en-US&page=${Pagenumber}`)
   }
 
   const My_apikey = "2e352e05a7d8b0a12370c4ba41e55909";
 
+
+
+
+
+
   //INSERTION DES FILMS 
 
   const [dataMovies, setdataMovies] = useState([])
-  const [urlmovies, seturlmovies] = useState(`https://api.themoviedb.org/3/movie/popular?api_key=${My_apikey}&language=fr-FR&page=2`)
+  const [Pagenumber, setPagenumber] = useState("")
+  const [urlmovies, seturlmovies] = useState(`https://api.themoviedb.org/3/movie/popular?api_key=${My_apikey}&language=fr-FR&page=1`)
   useEffect(() => {
     const recuperationdata = async () => {
       const resultatMovies = await axios(urlmovies)
-
-
       setdataMovies(resultatMovies.data.results);
     }
     recuperationdata()
-  }, [urlmovies])
+  }, [Pagenumber])
 
+  const nextpage = () => {
+    setPagenumber(Pagenumber + 1)
+  };
 
 
   let films = dataMovies.map(movie => {
@@ -107,11 +111,17 @@ function SectionFilm() {
   useEffect(() => {
     const recuperationdataProfil = async () => {
       //     const resultatMovies = await axios("https://api.themoviedb.org/3/movie/popular?api_key=${My_apikey}&language=en-US&page=1")
-      const resultatProfil = await axios(`https://api.themoviedb.org/3/movie/${my_id}?api_key=${My_apikey}&language=en-US`)
+
+
+
+      const Urlprofildefault = `https://api.themoviedb.org/3/movie/793723?api_key=${My_apikey}&language=en-US`
+      let urlprofilchangeid = `https://api.themoviedb.org/3/movie/${my_id}?api_key=${My_apikey}&language=en-US`
+
+      let urlprofil = my_id ? urlprofilchangeid : Urlprofildefault
+      const resultatProfil = await axios(urlprofil)
+
 
       setdataProfil(resultatProfil.data);
-
-      // console.log(resultatProfil.data.original_title)
     }
     recuperationdataProfil()
   }, [my_id])
@@ -126,8 +136,15 @@ function SectionFilm() {
   const [dataTrailer, setdataTrailer] = useState([])
   useEffect(() => {
     const recuperationdataTrailer = async () => {
-      const resultatTrailer = await axios(`https://api.themoviedb.org/3/movie/${my_id}/videos?api_key=${My_apikey}&language=en-US`)
 
+
+      const UrlTrailerdefault = `https://api.themoviedb.org/3/movie/793723/videos?api_key=${My_apikey}&language=en-US`
+      let urlTrailerchangeid = `https://api.themoviedb.org/3/movie/${my_id}/videos?api_key=${My_apikey}&language=en-US`
+
+      let urlTrailer = my_id ? urlTrailerchangeid : UrlTrailerdefault
+      const resultatTrailer = await axios(urlTrailer)
+
+      
       setdataTrailer(resultatTrailer.data.results);
     }
     recuperationdataTrailer()
@@ -140,7 +157,13 @@ function SectionFilm() {
   const [dataCast, setdataCast] = useState([])
   useEffect(() => {
     const recuperationdataCast = async () => {
-      const resultatCast = await axios(`https://api.themoviedb.org/3/movie/${my_id}/credits?api_key=${My_apikey}&language=en-US`)
+
+
+      const UrlCastdefault = `https://api.themoviedb.org/3/movie/793723/credits?api_key=${My_apikey}&language=en-US`
+      let urlCastchangeid = `https://api.themoviedb.org/3/movie/${my_id}/credits?api_key=${My_apikey}&language=en-US`
+
+      let urlCast = my_id ? urlCastchangeid : UrlCastdefault
+      const resultatCast = await axios(urlCast)
 
 
 
@@ -166,6 +189,7 @@ function SectionFilm() {
 
 
 
+
   return (
 
 
@@ -177,7 +201,7 @@ function SectionFilm() {
       {
         console.log(my_id)}
 
-      {console.log(dataGenre)}
+      {/* {alert(Pagenumber)}  */}
 
 
       <Cover
@@ -311,7 +335,7 @@ function SectionFilm() {
 
         <div className="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
           <div className="btn-group me-2" role="group" aria-label="First group">
-            <button class="favorite styled" type="button">
+            <button class="favorite styled" type="button" onClick={() => nextpage()}>
               Precedent
 </button>
           </div>

@@ -9,6 +9,7 @@ import { BrowserRouter } from "react-router-dom";
 import { Route, Switch } from "react-router-dom"
 import Menu from './Menu';
 import SectionActeur from './SectionActeur';
+import Contact from './components/Contact'
 
 
 
@@ -32,6 +33,9 @@ showprofilfromchild={getidmovies}
           <Route exact path="/SectionFilm" component={SectionFilm} />
           <Route path="/SectionSerie" component={SectionSerie} />
           <Route path="/SectionActeur" component={SectionActeur} />
+          <Route path="/Contact" component={Contact} />
+     
+     
         </switch>
 
       </BrowserRouter>
