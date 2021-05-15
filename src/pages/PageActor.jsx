@@ -1,11 +1,11 @@
-import './scss/SectionActeur.scss';
+import '../scss/PageActor.scss';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import CardPeople from './components/CardPeople'
-import Cover from './components/Cover'
-import SectionFooter from './SectionFooter';
+import CardPeople from '../components/CardPeople'
+import Cover from '../components/Cover'
+import SectionFooter from '../SectionFooter';
 
-const SectionActeur = (props) => {
+const PageActor = (props) => {
 
   //insertion profil
 
@@ -78,4 +78,4 @@ src = "/3lTxcQqYvtzMpTAEgTbO5RkE4iz.jpg"
 
   );
 }
-export default SectionActeur;
+export default PageActor;

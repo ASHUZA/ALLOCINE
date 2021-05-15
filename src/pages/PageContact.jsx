@@ -1,7 +1,7 @@
-import '../scss/Contact.scss';
+import '../scss/PageContact.scss';
 
 
-const Contact = (props) => {
+const PageContact = (props) => {
 
 
 
@@ -64,4 +64,4 @@ const Contact = (props) => {
 
     );
 }
-export default Contact;
+export default PageContact;

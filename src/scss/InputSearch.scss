@@ -4,14 +4,15 @@ $salmon: #ff7b73;
 $white: #ffffff;
 $your-pink: #ffcccc;
 
-body {
+.InputSearch {
     font-size: 10px; // change value to scale
     font-family: Roboto, sans-serif;
-    background-color: $salmon;
+  //  background-color: $salmon;
     
     margin: 0;
     display: grid;
-    height: 100vh;
+    height: 70px;
+    width: 500px;
     place-items: center;
 }
 
@@ -57,7 +58,7 @@ body {
 .c-form,
 .c-form__toggle {
     width: 20em;
-    height: 6.25em;
+    height: 40px;
 }
 
 .c-formContainer {

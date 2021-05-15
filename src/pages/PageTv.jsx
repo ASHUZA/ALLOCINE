@@ -1,18 +1,18 @@
 
-import Cover from './components/Cover';
-import Header from './components/Header';
-import Card from './components/Card'
-import CardBlock from './components/CardBlock';
-import SectionProfil from './SectionProfil';
-import SectionMovies from './SectionMovies';
-import SectionFooter from './SectionFooter';
-import SectionCarousel from './SectionCarousel';
-import SectionVideo from './SectionVideo';
+import Cover from '../components/Cover';
+import Header from '../components/Header';
+import Card from '../components/Card'
+import CardBlock from '../components/CardBlock';
+import SectionProfil from '../SectionProfil';
+import SectionMovies from '../SectionMovies';
+import SectionFooter from '../SectionFooter';
+import SectionCarousel from '../SectionCarousel';
+import SectionVideo from '../SectionVideo';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 
-const SectionSerie = (props) => {
+const PageTv = (props) => {
 
 
 
@@ -201,4 +201,4 @@ const SectionSerie = (props) => {
 
     );
 }
-export default SectionSerie;
+export default PageTv;

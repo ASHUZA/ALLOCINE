@@ -1,24 +1,25 @@
 
-import logo from './logo.svg';
-import './App.scss';
-import Cover from './components/Cover';
-import Header from './components/Header';
-import Card from './components/Card'
-import CardBlock from './components/CardBlock';
-import SectionProfil from './SectionProfil';
-import SectionMovies from './SectionMovies';
-import SectionFooter from './SectionFooter';
-import SectionCarousel from './SectionCarousel';
-import SectionVideo from './SectionVideo';
+import logo from '../logo.svg';
+import '../App.scss';
+import Cover from '../components/Cover';
+import Header from '../components/Header';
+import Card from '../components/Card'
+import CardBlock from '../components/CardBlock';
+import SectionProfil from '../SectionProfil';
+import SectionMovies from '../SectionMovies';
+import SectionFooter from '../SectionFooter';
+import SectionCarousel from '../SectionCarousel';
+import SectionVideo from '../SectionVideo';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import BtnGenres from './components/BtnGenres';
-import Menu from './Menu';
-import './scss/btn.scss';
-import CardCasting from './components/CardCasting';
+import BtnGenres from '../components/BtnGenres';
+import Menu from '../Menu';
+import '../scss/btn.scss';
+import CardCasting from '../components/CardCasting';
+import InputSearch from '../components/InputSearch';
 
 
-function SectionFilm() {
+function PageMovies() {
 
 
   const getidmovies = (e) => {
@@ -250,6 +251,7 @@ function SectionFilm() {
       </div>
 
 
+
       <div className="container section_cast">
 
         <div className="col-12 col-sm-12 col-sd-12 col-lg-12">
@@ -301,6 +303,7 @@ function SectionFilm() {
           })}
 
 
+<InputSearch/>
         </div>
         <div className="container bockcard">
           <div className="section-title" data-aos="fade-up">
@@ -365,4 +368,4 @@ function SectionFilm() {
   );
 }
 
-export default SectionFilm;
+export default PageMovies;

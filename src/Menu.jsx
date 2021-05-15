@@ -25,12 +25,12 @@ const Menu = (props) => {
                     <nav className="nav-menu d-none d-lg-block">
                         <ul>
                             <li><NavLink exact to="/" className="a">Home</NavLink></li>
-                            <li><NavLink to="SectionFilm" >Films</NavLink></li>
+                            <li><NavLink to="PageMovies" >Films</NavLink></li>
                           
-                            <li><NavLink to="SectionSerie">Series</NavLink></li>
-                            <li><NavLink to="SectionActeur">Acteurs</NavLink></li>
+                            <li><NavLink to="PageTv">Series</NavLink></li>
+                            <li><NavLink to="PageActor">Acteurs</NavLink></li>
                             <li><NavLink to="portfolio">Portfolio</NavLink></li>
-                            <li><NavLink to="Contact">Contact</NavLink></li>
+                            <li><NavLink to="PageContact">Contact</NavLink></li>
 {/* 
                             <form action="" method="post">
                                 <input type="search" name="search" /><input type="submit" value="Search" />
