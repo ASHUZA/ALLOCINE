@@ -29,9 +29,10 @@ function PageMovies() {
 
 
 
+
   const geturlgenre = (My_genre_id) => {
     //alert(My_genre_id)
-    urlmovies ? seturlmovies(`https://api.themoviedb.org/3/discover/movie?api_key=${My_apikey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${Pagenumber}&with_genres=${My_genre_id}&with_watch_monetization_types=flatrate`) : urlmovies(`https://api.themoviedb.org/3/movie/popular?api_key=${My_apikey}&language=en-US&page=${Pagenumber}`)
+    urlmovies ? seturlmovies(`https://api.themoviedb.org/3/discover/movie?api_key=${My_apikey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${My_genre_id}&with_watch_monetization_types=flatrate`) : urlmovies(`https://api.themoviedb.org/3/movie/popular?api_key=${My_apikey}&language=en-US&page=1`)
   }
 
   const My_apikey = "2e352e05a7d8b0a12370c4ba41e55909";
@@ -43,19 +44,50 @@ function PageMovies() {
 
   //INSERTION DES FILMS 
 
+  //1. FONCTION POUR APPELLER LE MOT A CHERCHER
+
+
+  
+
+  const [searchMovieWord, setsearchMovieWord] = useState("")
+  
+const  searchingMovies =(e)=> {
+
+    setsearchMovieWord (e.target.value
+    
+    )
+    console.log(searchMovieWord)
+  }
+
+// 2. URL RECHRECHE ET PAR DEFAUT
+
+  //const resultatMovies = await axios(urlMovies)
+
+
+
+
+
   const [dataMovies, setdataMovies] = useState([])
-  const [Pagenumber, setPagenumber] = useState("")
-  const [urlmovies, seturlmovies] = useState(`https://api.themoviedb.org/3/movie/popular?api_key=${My_apikey}&language=fr-FR&page=1`)
+  const [urlmovies, seturlmovies] = useState("")
   useEffect(() => {
     const recuperationdata = async () => {
-      const resultatMovies = await axios(urlmovies)
+
+
+      const UrlMoviesdefault = `https://api.themoviedb.org/3/movie/popular?api_key=${My_apikey}&language=fr-FR&page=1`
+      let urlMovieschangeWord =   `https://api.themoviedb.org/3/search/movie?api_key=${My_apikey}&language=en-US&query=${searchMovieWord}&page=1&include_adult=false`
+    
+    
+      let urlMovies = searchMovieWord ? urlMovieschangeWord : UrlMoviesdefault
+    
+
+      const resultatMovies = await axios(urlMovies)
       setdataMovies(resultatMovies.data.results);
     }
     recuperationdata()
-  }, [Pagenumber])
+  }, [searchMovieWord])
 
   const nextpage = () => {
-    setPagenumber(Pagenumber + 1)
+  //  setPagenumber(Pagenumber + 1)
   };
 
 
@@ -72,6 +104,7 @@ function PageMovies() {
     };
 
   })
+
 
 
 
@@ -115,7 +148,7 @@ function PageMovies() {
 
 
 
-      const Urlprofildefault = `https://api.themoviedb.org/3/movie/793723?api_key=${My_apikey}&language=en-US`
+      const Urlprofildefault = `https://api.themoviedb.org/3/movie/246655?api_key=${My_apikey}&language=en-US`
       let urlprofilchangeid = `https://api.themoviedb.org/3/movie/${my_id}?api_key=${My_apikey}&language=en-US`
 
       let urlprofil = my_id ? urlprofilchangeid : Urlprofildefault
@@ -139,13 +172,13 @@ function PageMovies() {
     const recuperationdataTrailer = async () => {
 
 
-      const UrlTrailerdefault = `https://api.themoviedb.org/3/movie/793723/videos?api_key=${My_apikey}&language=en-US`
+      const UrlTrailerdefault = `https://api.themoviedb.org/3/movie/246655/videos?api_key=${My_apikey}&language=en-US`
       let urlTrailerchangeid = `https://api.themoviedb.org/3/movie/${my_id}/videos?api_key=${My_apikey}&language=en-US`
 
       let urlTrailer = my_id ? urlTrailerchangeid : UrlTrailerdefault
       const resultatTrailer = await axios(urlTrailer)
 
-      
+
       setdataTrailer(resultatTrailer.data.results);
     }
     recuperationdataTrailer()
@@ -160,7 +193,7 @@ function PageMovies() {
     const recuperationdataCast = async () => {
 
 
-      const UrlCastdefault = `https://api.themoviedb.org/3/movie/793723/credits?api_key=${My_apikey}&language=en-US`
+      const UrlCastdefault = `https://api.themoviedb.org/3/movie/246655/credits?api_key=${My_apikey}&language=en-US`
       let urlCastchangeid = `https://api.themoviedb.org/3/movie/${my_id}/credits?api_key=${My_apikey}&language=en-US`
 
       let urlCast = my_id ? urlCastchangeid : UrlCastdefault
@@ -303,7 +336,25 @@ function PageMovies() {
           })}
 
 
-<InputSearch/>
+          {/* SEARCH PART */}
+
+
+          <div className="InputSearch">
+            <input className="c-checkbox" type="checkbox" id="checkbox" />
+            <div className="c-formContainer">
+              <form className="c-form" action="">
+                <input className="c-form__input" placeholder="" type="text" onChange={searchingMovies}/>
+                <label className="c-form__buttonLabel" for="checkbox">
+                  <button className="c-form__button" type="button">Chercher</button>
+                </label>
+                <label className="c-form__toggle" for="checkbox" data-title="Chercher un film"></label>
+              </form>
+            </div>
+          </div>
+
+
+
+
         </div>
         <div className="container bockcard">
           <div className="section-title" data-aos="fade-up">
