@@ -11,9 +11,9 @@ const CardPeople = (props) => {
 
       <div className="col-lg-3 col-md-4 d-flex align-items-stretch">
         <div className="course-item">
-          <img src={props.src} className="img-fluid" alt="..." />
-          <div className="course-content">
-
+         <div className="course-content">
+         <img src={props.src} className="img-fluid" alt="..." />
+         
             <h3><a href="course-details.html">{props.name}</a></h3>
             <div className="trainer d-flex justify-content-between align-items-center">
               <h4>voir plus</h4>

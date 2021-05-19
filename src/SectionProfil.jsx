@@ -13,15 +13,15 @@ const SectionProfil = (props) => {
             <div className="container-fluid">
                 <div className="row sectionprofil">
 
-                    <div className="col-4 col-sm-4 col-sd-12 col-lg-12 mt-5 mb-5 cardprofil">
+                    <div className="col-4 col-sm-4 col-sd-12 col-lg-12 mb-5 cardprofil">
 
 
                         <div className="row profil_block">
 
 
-                            <div className="col-5 col-sm-5 col-sd-5 col-lg-5 cardinfo">
+                            <div className="col-12 col-sm-12 col-sd-12 col-lg-12 cardinfo">
 
-                            
+
 
                                 <h2> <span>{props.titre}</span></h2>
 
@@ -40,13 +40,6 @@ const SectionProfil = (props) => {
 
                             </div>
 
-                            <div className="col-6 col-sm-6 col-sd-6 col-lg-6 col-xl-6 cardimg">
-                               {/* <p><img className="img-fluid imgfilm" src={`https://image.tmdb.org/t/p/original${props.src}`} alt="card image" /></p> */}
-                           
-                           
-      <SectionCarousel />
-
-                            </div>
                         </div>
 
                     </div>

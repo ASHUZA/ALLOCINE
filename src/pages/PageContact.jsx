@@ -16,7 +16,7 @@ const PageContact = (props) => {
 <div class="contactmenu">
   <ul> 
     <li>
-      <a href="#">
+      <a href="https://r.search.yahoo.com/_ylt=A0geKedu3qRgthsAIEdXNyoA;_ylu=Y29sbwNiZjEEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1621446383/RO=10/RU=https%3a%2f%2fwww.facebook.com%2fpascal.kasumbe/RK=2/RS=kbECMJQd4ot2nL2WaAEdsOPFP_U-">
         <span></span>
         <span></span>
         <span></span>
@@ -34,7 +34,7 @@ const PageContact = (props) => {
       </a> 
     </li>
     <li>
-      <a href="#">
+      <a href="https://www.instagram.com/ashuzapascal/">
         <span></span>
         <span></span>
         <span></span>

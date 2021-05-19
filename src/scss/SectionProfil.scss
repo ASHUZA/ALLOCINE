@@ -97,3 +97,50 @@ h2 span{
     font-size: 20px;
 
 }
+
+
+
+
+
+
+
+//SECTION VIDEO
+
+
+
+.Cardtraillerscroller{
+
+    height: 450px;
+
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scrollbar-color: rebeccapurple green;
+    scrollbar-width: thin;
+}
+
+
+
+.Cardtraillerscroller::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.9);
+	border-radius: 10px;
+	background-color: #CCCCCC;
+}
+
+.Cardtraillerscroller::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+.Cardtraillerscroller::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: #D62929;
+	background-image: -webkit-linear-gradient(90deg,
+											  transparent,
+											  rgba(0, 0, 0, 0.4) 50%,
+											  transparent,
+											  transparent)
+}
+

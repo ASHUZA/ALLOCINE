@@ -34,10 +34,15 @@ const Cover = (props) => {
                     <div className="container-fluid covercontainer d-flex align-items-center justify-content-center text-center h-20">
                         <div className="justify-content-center text-white">
                             <h1 className="mb-0">{props.titre}</h1>
-                            <h5 className="mb-2"> 1h 32min {props.release_date}, 2020 Horror, Originals, Thriller </h5>
+                            <h5 className="mb-2"> {props.release_date} <i className="bx bx-user"></i>&nbsp;{props.vote_count}&nbsp;&nbsp;   <i className="bx bx-heart"></i>&nbsp;{props.popularity}  {props.infoplus} : {props.budget}</h5>
+                            
+                          
+                            
+                            
+                            
                             <a
                                 className="btn btn-outline-light btn-lg m-2"
-                                href="https://www.youtube.com/watch?v=c9B4TPnak1A"
+                                href={props.homepage}   
                                 role="button"
                                 rel="nofollow"
                                 target="_blank"
@@ -48,7 +53,7 @@ const Cover = (props) => {
 
 
                                 className="btn btn-outline-light btn-lg m-2"
-                                href="https://youtu.be/azvR__GRQic"
+                                href="#"
                                 target="_blank"
                                 role="button"
                             >WATCH TRAILER</a

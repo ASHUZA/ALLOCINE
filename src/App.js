@@ -11,7 +11,8 @@ import Menu from './Menu';
 import PageActor from './pages/PageActor';
 import PageContact from './pages/PageContact'
 
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function App() {
 

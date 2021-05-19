@@ -1,10 +1,10 @@
-import '../scss/Card.scss';
+import '../scss/CardCasting.scss';
 
 
 const Card = (props) => {
 
 
-    const  showprofil = (id)=>{
+    const showprofil = (id) => {
         props.showprofilfromchild(id);
     }
 
@@ -14,7 +14,7 @@ const Card = (props) => {
 
         <>
 
-
+            {/* 
 
             <div>
                 <div className="image-flip hover-shadow" onClick={()=>showprofil(props.my_id)}>
@@ -36,6 +36,33 @@ const Card = (props) => {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div> */}
+
+
+            <div className="d-flex align-items-center justify-content-center maincard" onClick={() => showprofil(props.my_id)}>
+               
+                <div className="course-item">
+
+
+                    <div className="course-content d-flex flex-column">
+                        <div className="course_image">
+                            <img className="img-fluid" src={props.src} alt="card image" />
+                            
+                            </div>
+
+
+                        <h3><a href="course-details.html">{props.titre}</a></h3>
+                        <div className="trainer d-flex justify-content-between align-items-center">
+                            <h4>voir plus</h4>
+                            <div className="trainer-rank d-flex align-items-center">
+                                <i className="bx bx-user"> </i>&nbsp;50 &nbsp;&nbsp;
+                                <i className="bx bx-heart"></i>&nbsp;65
+                          </div>
+                            <div className="movieid">{props.my_id}</div>
+                        </div>
+
                     </div>
                 </div>
             </div>

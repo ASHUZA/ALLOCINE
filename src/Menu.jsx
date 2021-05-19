@@ -29,7 +29,6 @@ const Menu = (props) => {
                           
                             <li><NavLink to="PageTv">Series</NavLink></li>
                             <li><NavLink to="PageActor">Acteurs</NavLink></li>
-                            <li><NavLink to="portfolio">Portfolio</NavLink></li>
                             <li><NavLink to="PageContact">Contact</NavLink></li>
 {/* 
                             <form action="" method="post">

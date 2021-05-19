@@ -17,6 +17,10 @@ import Menu from '../Menu';
 import '../scss/btn.scss';
 import CardCasting from '../components/CardCasting';
 import InputSearch from '../components/InputSearch';
+import sliderbtn from '../components/sliderbtn';
+
+
+
 
 
 function PageMovies() {
@@ -47,19 +51,19 @@ function PageMovies() {
   //1. FONCTION POUR APPELLER LE MOT A CHERCHER
 
 
-  
+
 
   const [searchMovieWord, setsearchMovieWord] = useState("")
-  
-const  searchingMovies =(e)=> {
 
-    setsearchMovieWord (e.target.value
-    
+  const searchingMovies = (e) => {
+
+    setsearchMovieWord(e.target.value
+
     )
     console.log(searchMovieWord)
   }
 
-// 2. URL RECHRECHE ET PAR DEFAUT
+  // 2. URL RECHRECHE ET PAR DEFAUT
 
   //const resultatMovies = await axios(urlMovies)
 
@@ -74,11 +78,11 @@ const  searchingMovies =(e)=> {
 
 
       const UrlMoviesdefault = `https://api.themoviedb.org/3/movie/popular?api_key=${My_apikey}&language=fr-FR&page=1`
-      let urlMovieschangeWord =   `https://api.themoviedb.org/3/search/movie?api_key=${My_apikey}&language=en-US&query=${searchMovieWord}&page=1&include_adult=false`
-    
-    
+      let urlMovieschangeWord = `https://api.themoviedb.org/3/search/movie?api_key=${My_apikey}&language=en-US&query=${searchMovieWord}&page=1&include_adult=false`
+
+
       let urlMovies = searchMovieWord ? urlMovieschangeWord : UrlMoviesdefault
-    
+
 
       const resultatMovies = await axios(urlMovies)
       setdataMovies(resultatMovies.data.results);
@@ -87,7 +91,7 @@ const  searchingMovies =(e)=> {
   }, [searchMovieWord])
 
   const nextpage = () => {
-  //  setPagenumber(Pagenumber + 1)
+    //  setPagenumber(Pagenumber + 1)
   };
 
 
@@ -242,10 +246,20 @@ const  searchingMovies =(e)=> {
         src={dataProfil.backdrop_path}
         titre={dataProfil.original_title}
         release_date={dataProfil.release_date}
+        homepage={dataProfil.homepage}
+
+        budget={dataProfil.budget}
+
+        release_date={dataProfil.release_date}
+
+        popularity={dataProfil.popularity}
+
+        vote_count={dataProfil.vote_count}
+        infoplus={"Budget"}
+
 
       //   onload={showtoprated()}
       />
-
 
 
       <SectionProfil
@@ -265,24 +279,33 @@ const  searchingMovies =(e)=> {
 
       <div className="container-fluid videogb">
         <div className="container">
+          <div className="section-title mt-5" data-aos="fade-up">
+            <h2> VIDEO</h2>
+            <p> VIDEO TRAILLER </p>
+
+            <sliderbtn></sliderbtn>
+          </div>
           <div className="row SectionVideo">
 
-            {dataTrailer.map(function (element) {
-              return (
+            <div className="col-12 col-sm-12 col-sd-12 col-lg-12 col-xl-12 mb-2 d-flex  Cardtraillerscroller">
+
+              {dataTrailer.map(function (element) {
+                return (
 
 
-                <SectionVideo
-                  src1={element.key}
-                />
+                  <SectionVideo
+                    src1={element.key}
+                  />
 
-              );
-            })}
+                );
+              })}
+
+            </div>
 
           </div>
-
         </div>
-      </div>
 
+      </div>
 
 
       <div className="container section_cast">
@@ -343,7 +366,7 @@ const  searchingMovies =(e)=> {
             <input className="c-checkbox" type="checkbox" id="checkbox" />
             <div className="c-formContainer">
               <form className="c-form" action="">
-                <input className="c-form__input" placeholder="" type="text" onChange={searchingMovies}/>
+                <input className="c-form__input" placeholder="" type="text" onChange={searchingMovies} />
                 <label className="c-form__buttonLabel" for="checkbox">
                   <button className="c-form__button" type="button">Chercher</button>
                 </label>
@@ -356,34 +379,37 @@ const  searchingMovies =(e)=> {
 
 
         </div>
-        <div className="container bockcard">
-          <div className="section-title" data-aos="fade-up">
-            <h2> FILMS</h2>
-            <p> FILMS POPULAIRE </p>
-          </div>
-          <div className="row SectionMovies">
-            <div className="col-4 col-sm-4 col-sd-12 col-lg-12 col-xl-12 mb-5 d-flex justify-content-evenly flex-wrap cardMovies">
 
 
-              {films.map(function (element) {
-                return (
-                  <Card
-                    showprofilfromchild={getidmovies}
-                    my_id={element.matricule}
-                    titre={element.titre}
-                    resume={element.resume}
+        <div className="container courses">
+          <div className="container" data-aos="fade-up">
+            <div className="section-title" data-aos="fade-up">
+              <h2> FILMS</h2>
+              <p> FILMS POPULAIRE </p>
+            </div>
+            <div className="row SectionMovies">
+              <div className="col-4 col-sm-4 col-sd-12 col-lg-12 col-xl-12 mb-5 d-flex justify-content-evenly flex-wrap cardMovies">
 
-                    homepage={element.homepage}
-                    src={`https://image.tmdb.org/t/p/original${element.image_principal}`}
-                  />
-                );
-              })}
 
+                {films.map(function (element) {
+                  return (
+                    <Card
+                      showprofilfromchild={getidmovies}
+                      my_id={element.matricule}
+                      titre={element.titre}
+                      resume={element.resume}
+
+                      homepage={element.homepage}
+                      src={`https://image.tmdb.org/t/p/original${element.image_principal}`}
+                    />
+                  );
+                })}
+
+
+              </div>
 
             </div>
-
           </div>
-
         </div>
 
 
@@ -400,8 +426,7 @@ const  searchingMovies =(e)=> {
 </button>
           </div>
           <div className="btn-group" role="group" aria-label="Third group">
-            <button class="favorite styled" type="button">
-              Suivant
+            <button class="favorite styled" type="button">  Suivant
 </button>
 
           </div>

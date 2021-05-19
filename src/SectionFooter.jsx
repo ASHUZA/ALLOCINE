@@ -84,10 +84,10 @@ function SectionFooter() {
                   <h4>Useful Links</h4>
                   <ul>
                     <li><i className="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                    <li><i className="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                    <li><i className="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                    <li><i className="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-                    <li><i className="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                    <li><i className="bx bx-chevron-right"></i> <a href="#">Films</a></li>
+                    <li><i className="bx bx-chevron-right"></i> <a href="#">Series</a></li>
+                    <li><i className="bx bx-chevron-right"></i> <a href="#">Acteurs</a></li>
+                    <li><i className="bx bx-chevron-right"></i> <a href="#">Contact</a></li>
                   </ul>
                 </div>
 
@@ -96,17 +96,13 @@ function SectionFooter() {
                   <ul>
                     <li><i className="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
                     <li><i className="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-
-                    <li><i className="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                    <li><i className="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-                    <li><i className="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-                    <li><i className="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+                 <li><i className="bx bx-chevron-right"></i> <a href="#">Developpement web</a></li>
                   </ul>
                 </div>
 
                 <div className="col-lg-4 col-md-6 footer-newsletter">
                   <h4>Our Newsletter</h4>
-                  <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+                  <p>Enregistrer vous pour toujours être mis au courant de nos nouvelles</p>
                   <form action="" method="post">
                     <input type="email" name="email" /><input type="submit" value="Subscribe" />
                   </form>
