@@ -11,8 +11,12 @@ import Menu from './Menu';
 import PageActor from './pages/PageActor';
 import PageContact from './pages/PageContact'
 
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import coverslider from './components/coverslider';
+
+
 
 function App() {
 
@@ -21,6 +25,7 @@ function App() {
   return (
 
     <>
+
       <BrowserRouter>
      
         <Menu
@@ -31,6 +36,9 @@ function App() {
 showprofilfromchild={getidmovies}
      /> */}
         <switch>
+        
+        <Route exact path="/" component={coverslider} />
+         
           <Route exact path="/PageMovies" component={PageMovies} />
           <Route path="/PageTv" component={PageTv} />
           <Route path="/PageActor" component={PageActor} />

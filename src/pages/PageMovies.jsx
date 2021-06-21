@@ -18,6 +18,9 @@ import '../scss/btn.scss';
 import CardCasting from '../components/CardCasting';
 import InputSearch from '../components/InputSearch';
 import sliderbtn from '../components/sliderbtn';
+import coverslider from '../components/coverslider';
+
+
 
 
 
@@ -262,8 +265,13 @@ function PageMovies() {
       />
 
 
+<coverslider></coverslider>
+
+
       <SectionProfil
-        src={dataProfil.backdrop_path}
+      src={`https://image.tmdb.org/t/p/original${dataProfil.poster_path}`}
+                   
+       // src={dataProfil.backdrop_path}
         titre={dataProfil.original_title}
         overview={dataProfil.overview}
 

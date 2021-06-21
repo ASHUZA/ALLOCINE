@@ -7,6 +7,12 @@
     
 
 }
+
+.image_profil_detail{
+    margin-right: 20px;
+    height: 500px;
+    width: 300px;
+}
 .SectionVideo{
     margin-bottom: 5px;
     display: flex;
@@ -67,6 +73,8 @@
     border-radius: 20px;
     color: rgb(255, 255, 255);
     background-color: rgb(12, 15, 27);
+    display: flex;
+    justify-content: space-evenly;
     }
 
 .imgfilm{

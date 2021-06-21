@@ -42,15 +42,15 @@ const Card = (props) => {
 
 
             <div className="d-flex align-items-center justify-content-center maincard" onClick={() => showprofil(props.my_id)}>
-               
+
                 <div className="course-item">
 
 
                     <div className="course-content d-flex flex-column">
                         <div className="course_image">
                             <img className="img-fluid" src={props.src} alt="card image" />
-                            
-                            </div>
+
+                        </div>
 
 
                         <h3><a href="course-details.html">{props.titre}</a></h3>
