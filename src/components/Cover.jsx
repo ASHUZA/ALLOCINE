@@ -10,7 +10,7 @@ const Cover = (props) => {
 
 
 
-            <div id="intro" className="bg-image w-100 shadow-1-strong secttioncover">
+            <div id="cover" className="bg-image w-100 shadow-1-strong secttioncover">
 
                 <img
                   //  src="https://lumiere-a.akamaihd.net/v1/images/20cs_xmen_dark_phoenix_hero_banner_b26f8933.jpeg"

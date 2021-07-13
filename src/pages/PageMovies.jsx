@@ -39,7 +39,7 @@ function PageMovies() {
 
   const geturlgenre = (My_genre_id) => {
     //alert(My_genre_id)
-    urlmovies ? seturlmovies(`https://api.themoviedb.org/3/discover/movie?api_key=${My_apikey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${My_genre_id}&with_watch_monetization_types=flatrate`) : urlmovies(`https://api.themoviedb.org/3/movie/popular?api_key=${My_apikey}&language=en-US&page=1`)
+    urlmovies ? seturlmovies(`https://api.themoviedb.org/3/discover/movie?api_key=${My_apikey}&language=fr-FR&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${My_genre_id}&with_watch_monetization_types=flatrate`) : urlmovies(`https://api.themoviedb.org/3/movie/popular?api_key=${My_apikey}&language=fr-FR&page=1`)
   }
 
   const My_apikey = "2e352e05a7d8b0a12370c4ba41e55909";
@@ -81,7 +81,7 @@ function PageMovies() {
 
 
       const UrlMoviesdefault = `https://api.themoviedb.org/3/movie/popular?api_key=${My_apikey}&language=fr-FR&page=1`
-      let urlMovieschangeWord = `https://api.themoviedb.org/3/search/movie?api_key=${My_apikey}&language=en-US&query=${searchMovieWord}&page=1&include_adult=false`
+      let urlMovieschangeWord = `https://api.themoviedb.org/3/search/movie?api_key=${My_apikey}&language=fr-FR&query=${searchMovieWord}&page=1&include_adult=false`
 
 
       let urlMovies = searchMovieWord ? urlMovieschangeWord : UrlMoviesdefault
@@ -123,8 +123,8 @@ function PageMovies() {
   const [dataTv, setdataTv] = useState([])
   useEffect(() => {
     const recuperationdataTv = async () => {
-      //     const resultatMovies = await axios("https://api.themoviedb.org/3/movie/popular?api_key=${My_apikey}&language=en-US&page=1")
-      const resultatTv = await axios(`https://api.themoviedb.org/3/tv/popular?api_key=${My_apikey}&language=en-US&page=1`)
+      //     const resultatMovies = await axios("https://api.themoviedb.org/3/movie/popular?api_key=${My_apikey}&language=fr-FR&page=1")
+      const resultatTv = await axios(`https://api.themoviedb.org/3/tv/popular?api_key=${My_apikey}&language=fr-FR&page=1`)
 
 
       setdataTv(resultatTv.data.results);
@@ -151,12 +151,12 @@ function PageMovies() {
   const [my_id, setMyId] = useState("")
   useEffect(() => {
     const recuperationdataProfil = async () => {
-      //     const resultatMovies = await axios("https://api.themoviedb.org/3/movie/popular?api_key=${My_apikey}&language=en-US&page=1")
+      //     const resultatMovies = await axios("https://api.themoviedb.org/3/movie/popular?api_key=${My_apikey}&language=fr-FR&page=1")
 
 
 
-      const Urlprofildefault = `https://api.themoviedb.org/3/movie/246655?api_key=${My_apikey}&language=en-US`
-      let urlprofilchangeid = `https://api.themoviedb.org/3/movie/${my_id}?api_key=${My_apikey}&language=en-US`
+      const Urlprofildefault = `https://api.themoviedb.org/3/movie/246655?api_key=${My_apikey}&language=fr-FR`
+      let urlprofilchangeid = `https://api.themoviedb.org/3/movie/${my_id}?api_key=${My_apikey}&language=fr-FR`
 
       let urlprofil = my_id ? urlprofilchangeid : Urlprofildefault
       const resultatProfil = await axios(urlprofil)
@@ -179,8 +179,8 @@ function PageMovies() {
     const recuperationdataTrailer = async () => {
 
 
-      const UrlTrailerdefault = `https://api.themoviedb.org/3/movie/246655/videos?api_key=${My_apikey}&language=en-US`
-      let urlTrailerchangeid = `https://api.themoviedb.org/3/movie/${my_id}/videos?api_key=${My_apikey}&language=en-US`
+      const UrlTrailerdefault = `https://api.themoviedb.org/3/movie/246655/videos?api_key=${My_apikey}&language=fr-FR`
+      let urlTrailerchangeid = `https://api.themoviedb.org/3/movie/${my_id}/videos?api_key=${My_apikey}&language=fr-FR`
 
       let urlTrailer = my_id ? urlTrailerchangeid : UrlTrailerdefault
       const resultatTrailer = await axios(urlTrailer)
@@ -200,8 +200,8 @@ function PageMovies() {
     const recuperationdataCast = async () => {
 
 
-      const UrlCastdefault = `https://api.themoviedb.org/3/movie/246655/credits?api_key=${My_apikey}&language=en-US`
-      let urlCastchangeid = `https://api.themoviedb.org/3/movie/${my_id}/credits?api_key=${My_apikey}&language=en-US`
+      const UrlCastdefault = `https://api.themoviedb.org/3/movie/246655/credits?api_key=${My_apikey}&language=fr-FR`
+      let urlCastchangeid = `https://api.themoviedb.org/3/movie/${my_id}/credits?api_key=${My_apikey}&language=fr-FR`
 
       let urlCast = my_id ? urlCastchangeid : UrlCastdefault
       const resultatCast = await axios(urlCast)
@@ -220,7 +220,7 @@ function PageMovies() {
   const [dataGenre, setdataGenre] = useState([])
   useEffect(() => {
     const recuperationdataGenre = async () => {
-      const resultatGenre = await axios(`https://api.themoviedb.org/3/genre/movie/list?api_key=${My_apikey}&language=en-US`)
+      const resultatGenre = await axios(`https://api.themoviedb.org/3/genre/movie/list?api_key=${My_apikey}&language=fr-FR`)
 
 
       setdataGenre(resultatGenre.data.genres);
@@ -265,13 +265,128 @@ function PageMovies() {
       />
 
 
-<coverslider></coverslider>
 
+      <coverslider></coverslider>
+
+
+
+
+
+
+
+      <div className="containe d-flex align-items-center blockserie  flex-column">
+        <div className="container blockgenres">
+
+          {dataGenre.map(function (element) {
+            return (
+
+              <BtnGenres
+
+                showgenresfromchild={geturlgenre}
+                genre_id={element.id}
+                genre_name={element.name}
+
+              />
+            );
+          })}
+        </div>
+
+        {/* SEARCH PART */}
+
+
+        <div className="InputSearch">
+          <input className="c-checkbox" type="checkbox" id="checkbox" />
+          <div className="c-formContainer">
+            <form className="c-form" action="">
+              <input className="c-form__input" placeholder="" type="text" onChange={searchingMovies} />
+              <label className="c-form__buttonLabel" for="checkbox">
+                <button className="c-form__button" type="button">Chercher</button>
+              </label>
+              <label className="c-form__toggle" for="checkbox" data-title="Chercher un film"></label>
+            </form>
+          </div>
+
+
+        </div>
+
+
+        <div className="container courses">
+          <div className="container" data-aos="fade-up">
+            <div className="section-title" data-aos="fade-up">
+              <h2> FILMS</h2>
+              <p> FILMS POPULAIRE </p>
+            </div>
+            <div className="row d-flex justify-content-center SectionMovies">
+              <div className="col-6 col-sm-10 col-sd-12 col-lg-12 col-xl-12 mb-5 d-flex flex-wrap cardMovies">
+
+
+                {films.map(function (element) {
+                  return (
+                    <Card
+                      showprofilfromchild={getidmovies}
+                      my_id={element.matricule}
+                      titre={element.titre}
+                      resume={element.resume}
+
+                      homepage={element.homepage}
+                      src={`https://image.tmdb.org/t/p/original${element.image_principal}`}
+                    />
+                  );
+                })}
+
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+        <div className="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+          <div className="btn-group me-2" role="group" aria-label="First group">
+            <button class="favorite styled" type="button" onClick={() => nextpage()}>
+              Precedent
+            </button>
+          </div>
+          <div className="btn-group me-2" role="group" aria-label="Second group">
+
+            <button class="favorite styled" type="button">
+              1
+            </button>
+          </div>
+          <div className="btn-group" role="group" aria-label="Third group">
+            <button class="favorite styled" type="button">  Suivant
+            </button>
+
+          </div>
+        </div>
+
+
+      </div>
+
+      <Cover
+        src={dataProfil.backdrop_path}
+        titre={dataProfil.original_title}
+        release_date={dataProfil.release_date}
+        homepage={dataProfil.homepage}
+
+        budget={dataProfil.budget}
+
+        release_date={dataProfil.release_date}
+
+        popularity={dataProfil.popularity}
+
+        vote_count={dataProfil.vote_count}
+        infoplus={"Budget"}
+
+
+      //   onload={showtoprated()}
+      />
 
       <SectionProfil
-      src={`https://image.tmdb.org/t/p/original${dataProfil.poster_path}`}
-                   
-       // src={dataProfil.backdrop_path}
+        src={`https://image.tmdb.org/t/p/original${dataProfil.backdrop_path}`}
+
+        // src={dataProfil.backdrop_path}
         titre={dataProfil.original_title}
         overview={dataProfil.overview}
 
@@ -348,100 +463,7 @@ function PageMovies() {
       </div>
 
 
-
-
-      <div className="containe d-flex align-items-center blockserie  flex-column">
-        <div className="container blockgenres">
-
-          {dataGenre.map(function (element) {
-            return (
-
-              <BtnGenres
-
-                showgenresfromchild={geturlgenre}
-                genre_id={element.id}
-                genre_name={element.name}
-
-              />
-            );
-          })}
-
-
-          {/* SEARCH PART */}
-
-
-          <div className="InputSearch">
-            <input className="c-checkbox" type="checkbox" id="checkbox" />
-            <div className="c-formContainer">
-              <form className="c-form" action="">
-                <input className="c-form__input" placeholder="" type="text" onChange={searchingMovies} />
-                <label className="c-form__buttonLabel" for="checkbox">
-                  <button className="c-form__button" type="button">Chercher</button>
-                </label>
-                <label className="c-form__toggle" for="checkbox" data-title="Chercher un film"></label>
-              </form>
-            </div>
-          </div>
-
-
-
-
-        </div>
-
-
-        <div className="container courses">
-          <div className="container" data-aos="fade-up">
-            <div className="section-title" data-aos="fade-up">
-              <h2> FILMS</h2>
-              <p> FILMS POPULAIRE </p>
-            </div>
-            <div className="row SectionMovies">
-              <div className="col-4 col-sm-4 col-sd-12 col-lg-12 col-xl-12 mb-5 d-flex justify-content-evenly flex-wrap cardMovies">
-
-
-                {films.map(function (element) {
-                  return (
-                    <Card
-                      showprofilfromchild={getidmovies}
-                      my_id={element.matricule}
-                      titre={element.titre}
-                      resume={element.resume}
-
-                      homepage={element.homepage}
-                      src={`https://image.tmdb.org/t/p/original${element.image_principal}`}
-                    />
-                  );
-                })}
-
-
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-
-        <div className="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-          <div className="btn-group me-2" role="group" aria-label="First group">
-            <button class="favorite styled" type="button" onClick={() => nextpage()}>
-              Precedent
-</button>
-          </div>
-          <div className="btn-group me-2" role="group" aria-label="Second group">
-
-            <button class="favorite styled" type="button">
-              1
-</button>
-          </div>
-          <div className="btn-group" role="group" aria-label="Third group">
-            <button class="favorite styled" type="button">  Suivant
-</button>
-
-          </div>
-        </div>
-
-
-      </div>
+    
 
 
 

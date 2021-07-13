@@ -44,14 +44,15 @@ const Card = (props) => {
             <div className="d-flex align-items-center justify-content-center maincard" onClick={() => showprofil(props.my_id)}>
 
                 <div className="course-item">
-
+             
 
                     <div className="course-content d-flex flex-column">
+                    <a href="#cover">
                         <div className="course_image">
                             <img className="img-fluid" src={props.src} alt="card image" />
 
                         </div>
-
+                        </a>
 
                         <h3><a href="course-details.html">{props.titre}</a></h3>
                         <div className="trainer d-flex justify-content-between align-items-center">

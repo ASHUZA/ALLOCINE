@@ -24,8 +24,8 @@ const Menu = (props) => {
 
                     <nav className="nav-menu d-none d-lg-block">
                         <ul>
-                            <li><NavLink exact to="/" className="a">Home</NavLink></li>
-                            <li><NavLink to="PageMovies" >Films</NavLink></li>
+                            <li><NavLink exact to="/" className="a">Films</NavLink></li>
+                            {/* <li><NavLink to="PageMovies" >Films</NavLink></li> */}
                           
                             <li><NavLink to="PageTv">Series</NavLink></li>
                             <li><NavLink to="PageActor">Acteurs</NavLink></li>

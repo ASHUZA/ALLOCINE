@@ -37,9 +37,9 @@ showprofilfromchild={getidmovies}
      /> */}
         <switch>
         
-        <Route exact path="/" component={coverslider} />
+        {/* <Route exact path="/" component={coverslider} /> */}
          
-          <Route exact path="/PageMovies" component={PageMovies} />
+          <Route exact path="/" component={PageMovies} />
           <Route path="/PageTv" component={PageTv} />
           <Route path="/PageActor" component={PageActor} />
           <Route path="/PageContact" component={PageContact} />

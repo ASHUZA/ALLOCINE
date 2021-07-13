@@ -129,7 +129,7 @@ src = "/3lTxcQqYvtzMpTAEgTbO5RkE4iz.jpg"
             <p>Acteurs populaires</p>
           </div>
   <div className="row SectionMovies">
-              <div className="col-4 col-sm-4 col-sd-12 col-lg-12 col-xl-12 mb-5 d-flex justify-content-evenly flex-wrap cardMovies">
+              <div className="col-4 col-sm-4 col-sd-12 col-lg-12 col-xl-12 mb-5 d-flex flex-wrap cardMovies">
 
 
               {dataProfil.map(function (element) {

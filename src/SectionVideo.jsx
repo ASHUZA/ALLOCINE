@@ -7,7 +7,7 @@ const SectionVideo = (props) => {
 
         <>
 
-                    <div className="col-4 col-sm-4 col-sd-6 col-lg-6 col-xl-6 d-flex justify-content-md-center align-items-center cardvideo">
+                    <div className="col-12 col-sm-12 col-sd-12 col-lg-12 col-xl-6 d-flex justify-content-md-center align-items-center cardvideo">
 
 
                         <div class="embed-responsive embed-responsive-16by9 videoplay">

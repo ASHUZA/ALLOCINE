@@ -9,8 +9,9 @@
 .courses .course-item {
     border-radius: 5px;
   margin-bottom: 10px;
-    border: 1px solid #eef0ef;
+  //  border: 1px solid #eef0ef;
     margin-top: 5px;
+
 
     
   }
@@ -20,8 +21,9 @@
   .courses .course-content {
     height: 360px;
     width: 200px; ;
-   // background-color: rgb(37, 41, 228);
+    background-color: rgb(60, 60, 61);
     padding: 5px;
+    margin-top: 5px;
   }
 
   .courses .course-content .course_image {
@@ -39,7 +41,8 @@
   }
   
   .courses .course-content h3 a {
-    color: #37423b;
+   // color: #37423b;
+    color: #ffffff;
     transition: 0.3s;
     
   }
@@ -62,7 +65,7 @@
     padding-top: 2px;
     height: 30px;
    // background-color: rgb(90, 186, 21);
-    border-top: 1px solid #eef0ef;
+  //  border-top: 1px solid #eef0ef;
   }
   
   .courses .trainer .trainer-profile img {
@@ -71,7 +74,8 @@
   
   .courses .trainer .trainer-rank {
     font-size: 14px;
-    color: #657a6d;
+   // color: #657a6d;
+    color: #ffffff;
   }
 
   .movieid{
