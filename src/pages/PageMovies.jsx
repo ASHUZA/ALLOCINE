@@ -364,25 +364,27 @@ function PageMovies() {
 
       </div>
 
+
+      <div id="cover" className="container">
       <Cover
         src={dataProfil.backdrop_path}
-        titre={dataProfil.original_title}
-        release_date={dataProfil.release_date}
-        homepage={dataProfil.homepage}
+        // titre={dataProfil.original_title}
+        // release_date={dataProfil.release_date}
+        // homepage={dataProfil.homepage}
 
-        budget={dataProfil.budget}
+        // budget={dataProfil.budget}
 
-        release_date={dataProfil.release_date}
+        // release_date={dataProfil.release_date}
 
         popularity={dataProfil.popularity}
 
         vote_count={dataProfil.vote_count}
-        infoplus={"Budget"}
+        // infoplus={"Budget"}
 
 
       //   onload={showtoprated()}
       />
-
+</div>
       <SectionProfil
         src={`https://image.tmdb.org/t/p/original${dataProfil.backdrop_path}`}
 
